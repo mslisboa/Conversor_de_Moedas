@@ -4,15 +4,15 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Panel extends JPanel {
+public class OptionPanel extends JPanel {
     private JLabel labelComboBox;
     private JComboBox conversionOptions;
-    private String moedas[] = {"Conversor de Moeda"};
+    private String conversions[] = {"Conversor de Moeda"};
 
-    public Panel() {
+    public OptionPanel() {
         // Cria os componentes label e combobox
         labelComboBox = new JLabel("Escolha uma opção");
-        conversionOptions = new JComboBox(moedas); // Passa para o combobox a lista de moedas
+        conversionOptions = new JComboBox(conversions); // Passa para o combobox a lista de conversions
 
         // Posiciona o componentes
         labelComboBox.setBounds(10, 10, 880, 30);
