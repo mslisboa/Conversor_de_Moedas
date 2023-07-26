@@ -21,7 +21,11 @@ public class Frame extends JFrame {
         currencyConverter.setBounds(0, 100, 900, 500);
         currencyConverter.setLayout(null);
 
+        ResultPanel resultPanel = new ResultPanel();
+        resultPanel.setBounds(10, 300, 880, 230);
+
         // Adiciona o painel principal ao JFrame
+        this.add(resultPanel);
         this.add(currencyConverter);
         this.add(optionPanel);
                 
