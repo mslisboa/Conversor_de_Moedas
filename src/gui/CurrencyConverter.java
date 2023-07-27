@@ -42,7 +42,7 @@ public class CurrencyConverter extends JPanel {
 
         // Cria label da ComboBox to
         labelComboBoxTo = new JLabel("Para");
-        labelComboBoxTo.setBounds(540, 100, 250, 30);
+        labelComboBoxTo.setBounds(510, 100, 250, 30);
 
         // Cria a ComboBox com moedas para qual será convertido o valor
         to = new JComboBox(moedas);
