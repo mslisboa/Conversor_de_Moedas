@@ -13,16 +13,16 @@ public class CurrencyConverter extends JPanel {
     private JLabel labelComboBoxFrom;
     private JButton convertButton;
     private String moedas[] = {
-        "De Reais a Dólar",
-        "De Reais a Euros",
-        "De Reais a Libras Esterlinas",
-        "De Reais a Peso Argentino",
-        "De Reais a Peso Chileno",
-        "De Dólares a Reais",
-        "De Euros a Reais",
-        "De Libras Esterlinas a Reais",
-        "De Peso Argentino a Reais",
-        "De Peso Chileno a Reais"
+        "De Real a Dólar",
+        "De Real a Euros",
+        "De Real a Libras Esterlinas",
+        "De Real a Peso Argentino",
+        "De Real a Peso Chileno",
+        "De Dólar a Real",
+        "De Euro a Real",
+        "De Libra Esterlina a Real",
+        "De Peso Argentino a Real",
+        "De Peso Chileno a Real"
     };
 
     public CurrencyConverter() {
@@ -36,8 +36,8 @@ public class CurrencyConverter extends JPanel {
         value.setBounds(10, 130, 150, 30);
 
         // Cria label da ComboBox from
-        labelComboBoxFrom = new JLabel("Converter de");
-        labelComboBoxFrom.setBounds(240, 100, 250, 30);
+        labelComboBoxFrom = new JLabel("Escolha a moeda para a qual você deseja girar seu dinheiro");
+        labelComboBoxFrom.setBounds(225, 100, 485, 30);
 
         // Cria a ComboBox com moedas a serem convertidas
         from = new JComboBox(moedas);
