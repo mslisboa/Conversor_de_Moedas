@@ -6,16 +6,24 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class CurrencyConverter extends JPanel {
+import model.Converter;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class CurrencyConverter extends JPanel implements ActionListener {
     private JTextField value;
     private JComboBox from;
     private JLabel labelTextFieldValue;
     private JLabel labelComboBoxFrom;
     private JButton convertButton;
+    private ResultPanel resultPanel;
+    private Converter converter;
     private String moedas[] = {
         "De Real a Dólar",
-        "De Real a Euros",
-        "De Real a Libras Esterlinas",
+        "De Real a Euro",
+        "De Real a Libra Esterlina",
         "De Real a Peso Argentino",
         "De Real a Peso Chileno",
         "De Dólar a Real",
@@ -32,7 +40,7 @@ public class CurrencyConverter extends JPanel {
         labelTextFieldValue.setBounds(10, 100, 250, 30);
 
         // Cria a caixa de valor a ser convertido
-        value = new JTextField("0,00");
+        value = new JTextField("0.00");
         value.setBounds(10, 130, 150, 30);
 
         // Cria label da ComboBox from
@@ -46,7 +54,10 @@ public class CurrencyConverter extends JPanel {
         // Cria o Botão de conversão
         convertButton = new JButton("Converter");
         convertButton.setBounds(780, 130, 110, 30);
-        convertButton.addActionListener(from);
+        convertButton.addActionListener(this);
+
+        resultPanel = new ResultPanel();
+        resultPanel.setBounds(10, 200, 880, 230);
 
         // Adiciona os componentes ao painel de conversão
         this.add(labelTextFieldValue);
@@ -54,5 +65,18 @@ public class CurrencyConverter extends JPanel {
         this.add(labelComboBoxFrom);
         this.add(from);
         this.add(convertButton);
+        this.add(resultPanel);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String selectedItem = (String) from.getSelectedItem();
+        double valueToConverter = Double.parseDouble(value.getText());
+
+        converter = new Converter();
+        double convertedValue = converter.conversion(selectedItem, valueToConverter);
+
+        System.out.println("Valor a converter: " + valueToConverter +
+                            "\nResultado da conversão: " + convertedValue);
     }
 }
