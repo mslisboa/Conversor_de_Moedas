@@ -9,21 +9,24 @@ import javax.swing.JTextField;
 public class CurrencyConverter extends JPanel {
     private JTextField value;
     private JComboBox from;
-    private JComboBox to;
     private JLabel labelTextFieldValue;
     private JLabel labelComboBoxFrom;
-    private JLabel labelComboBoxTo;
     private JButton convertButton;
     private String moedas[] = {
-        "Real",
-        "Dólar",
-        "Euro",
-        "Libra Esterlina",
-        "Peso Argentino",
-        "Peso Chileno"
+        "De Reais a Dólar",
+        "De Reais a Euros",
+        "De Reais a Libras Esterlinas",
+        "De Reais a Peso Argentino",
+        "De Reais a Peso Chileno",
+        "De Dólares a Reais",
+        "De Euros a Reais",
+        "De Libras Esterlinas a Reais",
+        "De Peso Argentino a Reais",
+        "De Peso Chileno a Reais"
     };
 
     public CurrencyConverter() {
+        
         // Cria a label da caixa de valor a ser convertido
         labelTextFieldValue = new JLabel("Valor");
         labelTextFieldValue.setBounds(10, 100, 250, 30);
@@ -38,27 +41,18 @@ public class CurrencyConverter extends JPanel {
 
         // Cria a ComboBox com moedas a serem convertidas
         from = new JComboBox(moedas);
-        from.setBounds(240, 130, 250, 30);
-
-        // Cria label da ComboBox to
-        labelComboBoxTo = new JLabel("Para");
-        labelComboBoxTo.setBounds(510, 100, 250, 30);
-
-        // Cria a ComboBox com moedas para qual será convertido o valor
-        to = new JComboBox(moedas);
-        to.setBounds(510, 130, 250, 30);
+        from.setBounds(225, 130, 485, 30);
 
         // Cria o Botão de conversão
         convertButton = new JButton("Converter");
         convertButton.setBounds(780, 130, 110, 30);
+        convertButton.addActionListener(from);
 
         // Adiciona os componentes ao painel de conversão
         this.add(labelTextFieldValue);
         this.add(value);
         this.add(labelComboBoxFrom);
         this.add(from);
-        this.add(labelComboBoxTo);
-        this.add(to);
         this.add(convertButton);
     }
 }

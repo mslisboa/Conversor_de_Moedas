@@ -6,6 +6,6 @@ import javax.swing.JPanel;
 
 public class ResultPanel extends JPanel {
     public ResultPanel() {
-        this.setBackground(Color.BLUE);
+        //this.setBackground(Color.BLUE);
     }
 }
