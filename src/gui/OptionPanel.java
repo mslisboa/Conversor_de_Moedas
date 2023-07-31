@@ -15,8 +15,8 @@ public class OptionPanel extends JPanel {
         conversionOptions = new JComboBox(conversions); // Passa para o combobox a lista de conversions
 
         // Posiciona o componentes
-        labelComboBox.setBounds(10, 10, 880, 30);
-        conversionOptions.setBounds(10, 40, 880, 30);
+        labelComboBox.setBounds(10, 10, 430, 30);
+        conversionOptions.setBounds(10, 40, 430, 30);
 
         // Adiciona os componentes ao painel principal
         this.add(labelComboBox);
