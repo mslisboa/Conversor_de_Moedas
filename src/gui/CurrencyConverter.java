@@ -18,8 +18,8 @@ public class CurrencyConverter extends JPanel implements ActionListener {
     private JLabel labelTextFieldValue;
     private JLabel labelComboBoxFrom;
     private JButton convertButton;
-    private ResultPanel resultPanel;
     private Converter converter;
+    private JLabel result; //
     private String moedas[] = {
         "De Real a Dólar",
         "De Real a Euro",
@@ -34,7 +34,6 @@ public class CurrencyConverter extends JPanel implements ActionListener {
     };
 
     public CurrencyConverter() {
-        
         // Cria a label da caixa de valor a ser convertido
         labelTextFieldValue = new JLabel("Valor");
         labelTextFieldValue.setBounds(10, 100, 250, 30);
@@ -56,8 +55,8 @@ public class CurrencyConverter extends JPanel implements ActionListener {
         convertButton.setBounds(780, 130, 110, 30);
         convertButton.addActionListener(this);
 
-        resultPanel = new ResultPanel();
-        resultPanel.setBounds(10, 200, 880, 230);
+        result = new JLabel("");
+        result.setBounds(10, 250, 880, 30);
 
         // Adiciona os componentes ao painel de conversão
         this.add(labelTextFieldValue);
@@ -65,7 +64,7 @@ public class CurrencyConverter extends JPanel implements ActionListener {
         this.add(labelComboBoxFrom);
         this.add(from);
         this.add(convertButton);
-        this.add(resultPanel);
+        this.add(result);
     }
 
     @Override
@@ -75,8 +74,6 @@ public class CurrencyConverter extends JPanel implements ActionListener {
 
         converter = new Converter();
         double convertedValue = converter.conversion(selectedItem, valueToConverter);
-
-        System.out.println("Valor a converter: " + valueToConverter +
-                            "\nResultado da conversão: " + convertedValue);
+        result.setText("Resultado da conversão: " + convertedValue);
     }
 }
