@@ -3,6 +3,7 @@ package gui;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -48,6 +49,7 @@ public class CurrencyConverter extends JPanel implements ActionListener {
         // Cria o Botão de conversão
         convertButton = new JButton("Converter");
         convertButton.setBounds(330, 80, 110, 30);
+        
         convertButton.addActionListener(this);
 
         // Cria label que exibe o resultado da conversão
@@ -65,21 +67,21 @@ public class CurrencyConverter extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Captura o item lelecionado na comboBox e o valor da conversão
+        // Captura o item lelecionado na comboBox
         String selectedItem = (String) from.getSelectedItem();
-        Double valueToConverter = Double.valueOf(value.getText());
-
-        // Chama o método que realiza a conversão e seta o resultado na label
-        converter = new Converter();
-        result.setText("Resultado da conversão: " +
-                        converter.conversion(selectedItem, valueToConverter));
-
-/*
-        result.setText("Resultado da conversão: " +
-                        converter.conversion(
-                            (String) from.getSelectedItem(),
-                            Double.valueOf(value.getText())
-                        ));
-*/
+        
+        try {
+            // Captura o valor da conversão
+            Double valueToConverter = Double.valueOf(value.getText());
+            
+            // Chama o método que realiza a conversão e seta o resultado na label
+            converter = new Converter();
+            result.setText("Resultado da conversão: " +
+                            converter.conversion(selectedItem, valueToConverter));
+        } catch (Exception expetion) {
+            JOptionPane.showMessageDialog(
+                null, "Valor Inválido!", "Erro de Conversão", JOptionPane.ERROR_MESSAGE
+            );
+        }
     }
 }
