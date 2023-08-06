@@ -21,7 +21,7 @@ public class Converter extends Conversions {
                 return convertRealPesoArgentino(value);
 
             case "De Real a Peso Chileno":
-                return convertPesoChilenoReal(value);
+                return convertRealPesoChileno(value);
 
             case "De Dólar a Real":
                 return convertDolarReal(value);
