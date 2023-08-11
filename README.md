@@ -35,9 +35,9 @@ O conversor possui uma interface gráfica simples, que permite ao usuário escol
 
 ## 🛠️ Técnicas e Tecnologias Utilizadas
 
-* `Java 8`
-* `Visual Studio code`
-* `Paradigma de orientação a objetos`
+* `Java 17`
+* `Visual Studio Code`
+* `Paradigma de Orientação a Objetos`
 * `Java Swing`
 
 ## 🚪 Acesso ao Projeto
