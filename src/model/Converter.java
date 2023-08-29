@@ -1,12 +1,14 @@
 package model;
 
+import java.math.BigDecimal;
+
 public class Converter extends Conversions {
     public Converter() {
         super();
     }
     
     // Verifica o tipo de coversão a ser realizada
-    public double conversion(String optionConversion, double value) {
+    public BigDecimal conversion(String optionConversion, String value) {
         switch (optionConversion) {
             case "De Real a Dólar":
                 return convertRealDolar(value);
@@ -39,7 +41,7 @@ public class Converter extends Conversions {
                 return convertPesoChilenoReal(value);
         
             default:
-                return value;
+                return new BigDecimal(value);
         }
     }
 }

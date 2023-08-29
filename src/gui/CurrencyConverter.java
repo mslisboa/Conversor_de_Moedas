@@ -71,13 +71,10 @@ public class CurrencyConverter extends JPanel implements ActionListener {
         String selectedItem = (String) from.getSelectedItem();
         
         try {
-            // Captura o valor da conversão
-            Double valueToConverter = Double.valueOf(value.getText());
-            
             // Chama o método que realiza a conversão e seta o resultado na label
             converter = new Converter();
             result.setText("Resultado da conversão: " +
-                            converter.conversion(selectedItem, valueToConverter));
+                            converter.conversion(selectedItem, value.getText()));
         } catch (Exception exception) {
             JOptionPane.showMessageDialog(
                 null, "Valor Inválido!", "Erro de Conversão", JOptionPane.ERROR_MESSAGE

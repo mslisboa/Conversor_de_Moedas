@@ -1,78 +1,81 @@
 package model;
 
+import java.math.BigDecimal;
+
 public class Conversions {
-    private double realDolar;
-    private double realEuro;
-    private double realLibra;
-    private double realPesoArgentino;
-    private double realPesoChileno;
-    private double dolarReal;
-    private double euroReal;
-    private double libraReal;
-    private double pesoArgentinoReal;
-    private double pesoChilenoReal;
+    private BigDecimal realDolar;
+    private BigDecimal realEuro;
+    private BigDecimal realLibra;
+    private BigDecimal realPesoArgentino;
+    private BigDecimal realPesoChileno;
+    private BigDecimal dolarReal;
+    private BigDecimal euroReal;
+    private BigDecimal libraReal;
+    private BigDecimal pesoArgentinoReal;
+    private BigDecimal pesoChilenoReal;
 
     public Conversions() {
         // Cotação em 01/08/2022
-        this.realDolar = 0.2094153;
-        this.realEuro = 0.1908798;
-        this.realLibra = 0.1642603;
-        this.realPesoArgentino = 57.8368999;
-        this.realPesoChileno = 176.584849;
-        this.dolarReal = 4.7752003;
-        this.euroReal = 5.238899;
-        this.libraReal = 6.0878983;
-        this.pesoArgentinoReal = 0.01729;
-        this.pesoChilenoReal = 0.005663;
+        this.realDolar = new BigDecimal("0.2094153");
+        this.realEuro = new BigDecimal("0.1908798");
+        this.realLibra = new BigDecimal("0.1642603");
+        this.realPesoArgentino = new BigDecimal("57.8368999");
+        this.realPesoChileno = new BigDecimal("176.584849");
+        this.dolarReal = new BigDecimal("4.7752003");
+        this.euroReal = new BigDecimal("5.238899");
+        this.libraReal = new BigDecimal("6.0878983");
+        this.pesoArgentinoReal = new BigDecimal("0.01729");
+        this.pesoChilenoReal = new BigDecimal("0.005663");
     }
     
     // Realiza a conversão de Real para Dólar
-    public double convertRealDolar(double value) {
-        return value * realDolar;
+    public BigDecimal convertRealDolar(String value) {
+        // return value * realDolar;
+        return new BigDecimal(value).multiply(realDolar);
     }
 
     // Realiza a conversão de Real para Euro
-    public double convertRealEuro(double value) {
-        return value * realEuro;
+    public BigDecimal convertRealEuro(String value) {
+        return new BigDecimal(value).multiply(realEuro);
     }
 
     // Realiza a conversão de Real para Libra Esterlina
-    public double convertRealLibra(double value) {
-        return value * realLibra;
+    public BigDecimal convertRealLibra(String value) {
+        return new BigDecimal(value).multiply(realLibra);
     }
 
     // Realiza a conversão de Real para Peso Argentino
-    public double convertRealPesoArgentino(double value) {
-        return value * realPesoArgentino;
+    public BigDecimal convertRealPesoArgentino(String value) {
+        return new BigDecimal(value).multiply(realPesoArgentino);
     }
 
     // Realiza a conversão de Real para Peso Chileno
-    public double convertRealPesoChileno(double value) {
-        return value * realPesoChileno;
+    public BigDecimal convertRealPesoChileno(String value) {
+        return new BigDecimal(value).multiply(realPesoChileno);
     }
 
     // Realiza a conversão de Dólar para Real
-    public double convertDolarReal(double value) {
-        return value * dolarReal;
+    public BigDecimal convertDolarReal(String value) {
+        return new BigDecimal(value).multiply(dolarReal);
     }
 
     // Realiza a conversão de Euro para Real
-    public double convertEuroReal(double value) {
-        return value * euroReal;
+    public BigDecimal convertEuroReal(String value) {
+        return new BigDecimal(value).multiply(euroReal);
     }
 
     // Realiza a conversão de Libra Esterlina para Real
-    public double convertLibraReal(double value) {
-        return value * libraReal;
+    public BigDecimal convertLibraReal(String value) {
+        return new BigDecimal(value).multiply(libraReal);
     }
 
     // Realiza a conversão de Peso Argentino para Real
-    public double convertPesoArgentinoReal(double value) {
-        return value * pesoArgentinoReal;
+    public BigDecimal convertPesoArgentinoReal(String value) {
+        return new BigDecimal(value).multiply(pesoArgentinoReal);
     }
 
     // Realiza a conversão de Peso Chileno para Real
-    public double convertPesoChilenoReal(double value) {
-        return value * pesoChilenoReal;
+    public BigDecimal convertPesoChilenoReal(String value) {
+        return new BigDecimal(value).multiply(pesoChilenoReal);
     }
 }
