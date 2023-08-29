@@ -31,7 +31,7 @@ O conversor possui uma interface gráfica simples, que permite ao usuário escol
 * `Tipo de conversor`: Permite escolher o tipo de conversor que deseja utilizar (No momento há apenas o conversor de moedas)
 * `Opções de conversão`: Permite escolher a conversão a ser realizada
 
-<img src="/src/img/Conversor.gif" />
+<img src="img/Conversor.gif" />
 
 ## 🛠️ Técnicas e Tecnologias Utilizadas
 
