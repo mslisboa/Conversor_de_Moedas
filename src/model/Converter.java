@@ -2,7 +2,9 @@ package model;
 
 import java.math.BigDecimal;
 
-public class Converter extends Conversions {
+import service.ConverterService;
+
+public class Converter extends ConverterService {
     public Converter() {
         super();
     }

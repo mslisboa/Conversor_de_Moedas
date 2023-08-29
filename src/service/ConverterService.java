@@ -1,8 +1,8 @@
-package model;
+package service;
 
 import java.math.BigDecimal;
 
-public class Conversions {
+public class ConverterService {
     private BigDecimal realDolar;
     private BigDecimal realEuro;
     private BigDecimal realLibra;
@@ -14,7 +14,7 @@ public class Conversions {
     private BigDecimal pesoArgentinoReal;
     private BigDecimal pesoChilenoReal;
 
-    public Conversions() {
+    public ConverterService() {
         // Cotação em 01/08/2022
         this.realDolar = new BigDecimal("0.2094153");
         this.realEuro = new BigDecimal("0.1908798");
